@@ -1,4 +1,4 @@
-html.webp {
+html {
   scroll-behavior: smooth;
 
   background: url(../img/background.jpg) repeat center center fixed;
@@ -11,6 +11,21 @@ html.webp {
   }
   @media (max-width: $mobile) {
     background: $backgroundColor;
+  }
+  &.webp {
+    scroll-behavior: smooth;
+
+    background: url(../img/background.jpg) repeat center center fixed;
+    // background-size: cover;
+    background-size: contain;
+    height: 100%;
+    overflow: hidden;
+    @media (max-width: $tablet) {
+      background: $fontColor;
+    }
+    @media (max-width: $mobile) {
+      background: $backgroundColor;
+    }
   }
 }
 body {
