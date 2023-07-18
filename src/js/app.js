@@ -8,6 +8,7 @@ const restCard = document.querySelector(".card");
 const typeFilters = document.querySelectorAll(".type__link");
 const selectOption = document.getElementById("rests-sorting");
 const tipsTriggers = document.querySelectorAll(".tooltip-trigger");
+const quantuty = document.getElementById("quantity");
 //DOM elements in Editing form
 const editingArea = document.querySelector(".edit");
 const form = document.getElementById("edit-form");
@@ -292,6 +293,7 @@ class App {
     });
 
     this.map.fitBounds(bounds);
+    quantuty.innerHTML = this.rests.length;
   }
   moveToPopUp(e) {
     const sidebarItemElement = e.target.closest(".item-sidebar");
@@ -538,6 +540,9 @@ class App {
       restsMarkers.forEach((marker) => (marker.style.display = "block"));
     }
     this.sortBySelect();
+    quantuty.innerHTML = this.isFiltered
+      ? this.restsFiltered.length
+      : this.rests.length;
   }
   renderRestMarker(rest) {
     L.marker([+rest.lat, +rest.lng])
@@ -634,7 +639,6 @@ class App {
       arrayToSort = this.restsFiltered;
       storageName = "filtered restaraunts";
     } else if (!this.isFiltered) {
-      console.log("no filters");
       arrayToSort = this.rests;
       storageName = "restaraunts";
     }
