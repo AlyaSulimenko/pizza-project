@@ -192,7 +192,6 @@ class App {
   getDistance(rest, coords) {
     const [latitude, longitude] = coords; // destructing
     const myLocation = L.latLng(latitude, longitude);
-    console.log(myLocation);
     const restLocation = L.latLng(rest.lat, rest.lng);
     const distance = myLocation.distanceTo(restLocation);
     const distanceInKm = (distance / 1000).toFixed(2);
@@ -538,7 +537,6 @@ class App {
       //markers(css only)
       restsMarkers.forEach((marker) => (marker.style.display = "block"));
     }
-    console.log(this.isFiltered);
     this.sortBySelect();
   }
   renderRestMarker(rest) {
