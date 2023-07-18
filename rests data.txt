@@ -1,0 +1,96 @@
+///////////////////////
+Osteria la Cantina
+https://postcode.com.ua/storage/organizations/7762-philippe-prados-osteria-la-cantina-2.jpg
+49.99474236245705
+36.23162875868398
+Sumska str., 7
++380688800881
+http://www.lacantina.com.ua/
+fancy
+///////////////////////////////
+Trattoria Sardinia
+https://www.keramis.com.ua/wa-data/public/blog/img/trattoria.sardiniia_20200428_083819_0.jpg
+50.051321464399805
+36.19587928132465
+Akhsarova str., 4/6A
++380953618824
+https://trattoria.kh.ua/
+casual
+/////////////////////////
+Osteria il Tartufo
+https://iltartufo.com.ua/wp-content/uploads/2021/09/hero_bg_image-1024x604.jpg
+50.01482346028439
+36.23450309011539
+Cultury str., 20V
++380673256869
+https://iltartufo.com.ua/
+fancy
+///////////////////////////
+Prohibition Pizza
+https://vgorode.ua/img/article/7304/26_main-v1577722342.jpg
+50.0258103914066
+36.23096248287115
+Sarzhynska str., 28A
++380670101920
+https://www.facebook.com/profile.php?id=100033612943489
+takeaway
+///////////////////////////////
+Trattoria Sicilia
+https://cdn-tipmymenus-com.fra1.digitaloceanspaces.com/files/60ee0310-fd2b-4346-a579-6ce917807e92-small.jpg
+50.018725140537555
+36.22402808287087
+Nauky av., 19A
++380954855065
+https://trattoria.kh.ua/
+casual
+///////////////////////////////
+Trattoria Lombardia
+https://postcode.com.ua/storage/organizations/7001-svetlana-wellnesswell-trattoriya-lombardiya-1.jpg
+50.013077461850656
+36.23153688765959
+Cultury str., 22B
++380982091494
+https://trattoria.kh.ua/
+casual
+/////////////////////////////
+address
+: 
+"Bakulina str., 16"
+details
+: 
+["delivery"]
+id
+: 
+"0765509415"
+lat
+: 
+"50.01649342034236"
+lng
+: 
+"36.23027908650732"
+name
+: 
+"Double Cheese Pizza"
+phone
+: 
+"+380663607468"
+pictureUrl
+: 
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuaRKgZn6Xdne40LGblX4I7JgPVqv97jYBlQ&usqp=CAU"
+type
+: 
+"takeaway"
+webUrl
+: 
+"https://dc.kh.ua/en/"
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+.tooltip-text {
+  display: none;
+  position: absolute;
+  top: rem(-40);
+  z-index: 10;
+  background: $accentColorThird;
+  padding: 8px;
+  font-size: 1rem;
+  color: #fff;
+  border-radius: rem(10);
+  animation: fadeIn 0.6s;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 35%;
+    margin-left: -8px;
+    border: 8px solid transparent;
+    border-top: 8px solid $accentColorThird;
+  }
+  &.show {
+    display: block;
+  }
+}

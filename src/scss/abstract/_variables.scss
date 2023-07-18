@@ -1,0 +1,31 @@
+$fontFamily: "Roboto";
+$handwritingFont: "Oleo Script Swash Caps";
+
+$symbolFont: "Material Symbols Outline";
+$fontSize: rem(18);
+// Main colours
+// $backgroundColor: rgb(222, 218, 205);
+$backgroundColor: #f1e2c3;
+$fontColor: rgb(52, 46, 33);
+$primaryHover: #e65e3c;
+$accentColorPrimary: #fb6d01;
+$accentColorSecondary: #64aa36;
+$accentColorThird: #f7b141;
+// min desktop width, px
+$minWidth: 320;
+// max desktop width, px
+$maxWidth: 1920;
+// max container width
+$maxWidthContainer: 1420;
+//safety paddings(2*15px)
+$containerPadding: 30;
+$containerWidth: $maxWidthContainer + $containerPadding;
+//Break-points
+$pc: em($containerWidth);
+$tablet: em(991.98);
+$mobile: em(767.98);
+$mobileSmall: em(479.98);
+// Adaptation:
+// 1 = responsive (no bp),
+// 2 = with bp
+$responsiveType: 1;

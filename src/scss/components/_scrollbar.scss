@@ -1,0 +1,22 @@
+//Scrollbar========================================================================================================================
+/* width */
+::-webkit-scrollbar {
+  width: rem(5);
+  @media (max-width: $tablet) {
+    height: rem(5);
+  }
+}
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px grey;
+  border-radius: rem(10);
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $accentColorThird;
+  border-radius: rem(10);
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #eea52f;
+}

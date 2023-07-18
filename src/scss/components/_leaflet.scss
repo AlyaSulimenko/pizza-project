@@ -1,0 +1,109 @@
+.rest-popup {
+  position: relative;
+  &.zoomed-in {
+    transform: translateY(0) rotate(-360deg) scale(1.5);
+    z-index: 10;
+  }
+  &.in-focus {
+    transform: translateY(0) rotate(360deg) scale(1);
+  }
+
+  &.location,
+  &.fancy,
+  &.casual,
+  &.takeaway {
+    margin-bottom: rem(-10);
+    transition: all 0.8s ease-in-out;
+    img {
+      width: rem(35);
+      display: block;
+      margin: 0 auto;
+      margin-bottom: rem(5);
+    }
+  }
+}
+.leaflet-popup-content-wrapper {
+  background-color: transparent;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  width: rem(50);
+  height: rem(50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.leaflet-popup-content {
+  margin: rem(10);
+}
+.fancy {
+  .leaflet-popup-tip {
+    background-color: $accentColorThird;
+  }
+  .leaflet-popup-content-wrapper {
+    border: 3px solid $accentColorThird;
+  }
+}
+.casual {
+  .leaflet-popup-tip {
+    background-color: $accentColorSecondary;
+  }
+  .leaflet-popup-content-wrapper {
+    border: 3px solid $accentColorSecondary;
+  }
+}
+.takeaway {
+  .leaflet-popup-tip {
+    background-color: $accentColorPrimary;
+  }
+  .leaflet-popup-content-wrapper {
+    border: 3px solid $accentColorPrimary;
+  }
+}
+.location-popup {
+  .leaflet-popup-tip {
+    background-color: #5b2fee;
+  }
+  .leaflet-popup-content-wrapper {
+    width: rem(70);
+    height: rem(70);
+    border: 3px solid #5b2fee;
+  }
+  img {
+    width: rem(50);
+    margin-bottom: rem(10);
+  }
+  &:before {
+    position: absolute;
+    content: "I'm hungry!";
+    top: -20%;
+    left: -80%;
+    width: rem(90);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: rem(10);
+    line-height: 1;
+    background-color: #5b2fee;
+    color: $backgroundColor;
+    font-weight: bold;
+    padding: rem(10) rem(5);
+    transition: all 0.8s ease-in-out;
+  }
+  &:hover {
+    &:before {
+      display: flex;
+    }
+  }
+}
+.leaflet-marker-pane,
+.leaflet-shadow-pane,
+.leaflet-popup-close-button {
+  display: none;
+}
+.material-symbols-outlined {
+  font-size: rem(25);
+  color: $fontColor;
+  transition: all 0.8s ease-in-out;
+}

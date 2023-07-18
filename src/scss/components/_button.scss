@@ -1,0 +1,121 @@
+.buttons {
+  display: flex;
+  column-gap: rem(20);
+}
+.button {
+  display: inline-block;
+  color: #fff;
+  font-size: rem(20);
+  @include adaptiveValue("font-size", 20, 18, 1, 1920, 992);
+  font-weight: 600;
+  padding: rem(10) rem(18);
+  border-radius: rem(10);
+  transition: all 0.5s ease-in-out;
+  &_delete-all,
+  &_confirm_del {
+    background-color: $accentColorPrimary;
+    &:hover {
+      background-color: $primaryHover;
+    }
+  }
+  &_save,
+  &_save-changes,
+  &_edit-info,
+  &_forward,
+  &_cancel_del {
+    background-color: $accentColorSecondary;
+    &:hover {
+      background-color: #73b746;
+    }
+  }
+}
+.round-btn {
+  position: relative;
+  width: rem(60);
+  height: rem(60);
+  @media (max-width: $tablet) {
+    width: rem(45);
+    height: rem(45);
+  }
+  border-radius: 50%;
+  transition: all 0.5s ease-in-out;
+  span {
+    position: absolute;
+    width: 60%;
+    height: 10%;
+    background-color: #fff;
+    border-radius: rem(20);
+  }
+  &_small {
+    width: rem(40);
+    height: rem(40);
+    @media (max-width: $tablet) {
+      width: rem(38);
+      height: rem(38);
+    }
+    @media (max-width: $mobileSmall) {
+      width: rem(30);
+      height: rem(30);
+    }
+  }
+  &_cancel {
+    background-color: $accentColorPrimary;
+    &:hover {
+      background-color: $primaryHover;
+    }
+    span {
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%) rotate(45deg);
+      &:nth-child(2) {
+        transform: translate(-50%) rotate(-45deg);
+      }
+    }
+  }
+  &_add {
+    background-color: $accentColorSecondary;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      background-color: #73b746;
+    }
+    span {
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%) rotate(0);
+      &:nth-child(2) {
+        transform: translate(-50%) rotate(-90deg);
+      }
+    }
+  }
+  &_back {
+    background-color: $accentColorPrimary;
+    &:hover {
+      background-color: $primaryHover;
+    }
+    span {
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%) rotate(0);
+      &:nth-child(2) {
+        width: 45%;
+        transform: translate(-80%, -120%) rotate(-45deg);
+        @media (max-width: $tablet) {
+          transform: translate(-20%, 110%) rotate(-45deg);
+        }
+      }
+      &:nth-child(3) {
+        width: 45%;
+        transform: translate(-80%, 120%) rotate(45deg);
+      }
+      @media (max-width: $tablet) {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%) rotate(90deg);
+        &:nth-child(3) {
+          width: 45%;
+          transform: translate(-80%, 120%) rotate(45deg);
+        }
+      }
+    }
+  }
+}

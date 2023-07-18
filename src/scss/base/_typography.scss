@@ -1,0 +1,26 @@
+.title {
+  font-family: $handwritingFont;
+  color: $accentColorPrimary;
+  font-size: rem(32);
+}
+.subtitle {
+  font-weight: 600;
+  text-transform: uppercase;
+  opacity: 0.7;
+  font-size: rem(16);
+  @media (max-width: $tablet) {
+    font-size: rem(14);
+  }
+  &_info {
+    color: $accentColorSecondary;
+    opacity: 1;
+  }
+  &_error {
+    color: $accentColorPrimary;
+    opacity: 1;
+    font-size: rem(12);
+    text-transform: none;
+    font-weight: 500;
+    margin-bottom: rem(5);
+  }
+}

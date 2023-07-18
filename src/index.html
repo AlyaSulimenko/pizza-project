@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- @@include('html/head.html',{ "title":"Pizza Hunt" }) -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="img/favicon-32x32.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+      defer
+    ></script>
+    <script src="js/app.min.js" defer></script>
+    <title>Pizza Hunt</title>
+  </head>
+  <body>
+    <main>
+      <div class="main__app app">
+        <div class="app__container">
+          <div class="app__sidebar sidebar">
+            <div class="sidebar__header">
+              <div class="sidebar__logo logo">
+                <div class="logo__image">
+                  <img src="../img/logo.png" alt="logo" />
+                </div>
+                <h1 class="logo__title title">Pizza Hunt</h1>
+              </div>
+            </div>
+            <div class="sidebar__filters filters">
+              <div class="filters__type type">
+                <div class="type__subtitle subtitle">
+                  What are you looking for?
+                </div>
+                <ul class="type__list">
+                  <li class="type__item">
+                    <p class="tooltip-text">Fancy</p>
+                    <a href="" class="type__link tooltip-trigger fancy"
+                      ><img src="../img/types/waiter.svg" alt="fancy"
+                    /></a>
+                  </li>
+                  <li class="type__item">
+                    <p class="tooltip-text">Casual</p>
+                    <a href="" class="type__link tooltip-trigger casual"
+                      ><img src="../img/types/fast-food.svg" alt="casual"
+                    /></a>
+                  </li>
+                  <li class="type__item">
+                    <p class="tooltip-text">Takeaway</p>
+                    <a href="" class="type__link tooltip-trigger takeaway"
+                      ><img src="../img/types/pizza-box.svg" alt="takeaway"
+                    /></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="filters__sorting sorting">
+                <div class="sorting__subtitle subtitle">Let's sort them:</div>
+                <form action="" class="sorting__form">
+                  <select id="rests-sorting" name="sort">
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="a-z">From A to Z</option>
+                    <option value="z-a">From Z to A</option>
+                    <option value="nearest">
+                      By Distance (from the nearest)
+                    </option>
+                    <option value="furthest">
+                      By Distance (from the furthest)
+                    </option>
+                  </select>
+                </form>
+                <div class="sorting__result subtitle subtitle_info">
+                  <span id="sorting-result">8</span> places found
+                </div>
+              </div>
+            </div>
+            <ul class="sidebar__items"></ul>
+            <div class="sidebar__footer">
+              <button class="button button_delete-all">Delete All</button
+              ><button class="round-btn round-btn_add">
+                <span></span><span></span>
+              </button>
+            </div>
+            <div class="card"></div>
+            <div class="edit">
+              <div class="edit__header sidebar__header">
+                <div class="card__logo logo">
+                  <div class="logo__image">
+                    <img src="../img/logo.png" alt="logo" />
+                  </div>
+                  <h1 class="logo__title title">Pizza Hunt</h1>
+                </div>
+              </div>
+              <div class="edit__body">
+                <form class="edit__form form" id="edit-form" name="form">
+                  <div class="form__row_tablet">
+                    <div class="form__item">
+                      <label class="form__label subtitle" for="name-input"
+                        >The place is called:</label
+                      >
+                      <input
+                        class="form__input"
+                        type="text"
+                        id="name-input"
+                        name="name"
+                        placeholder="e.g., Trattoria ZaZa"
+                        required
+                      />
+                      <!-- <span class="form__error subtitle subtitle_error"
+                        >Please don't leave this field empty</span
+                      > -->
+                    </div>
+                    <div class="form__item">
+                      <label class="form__label subtitle" for="pictureUrl-input"
+                        >Please share a picture</label
+                      >
+                      <input
+                        class="form__input"
+                        type="text"
+                        id="pictureUrl-input"
+                        name="picture"
+                        placeholder="Paste the picture URL"
+                        required
+                      />
+                      <!-- <span class="form__error subtitle subtitle_error"
+                        >Please don't leave this field empty</span
+                      > -->
+                    </div>
+                  </div>
+                  <div class="form__item">
+                    <label
+                      class="form__label subtitle"
+                      for="lat-input lng-input"
+                      >We would need the geo coords:</label
+                    >
+                    <div class="form__row_tablet">
+                      <div class="form__pair">
+                        <input
+                          class="form__input"
+                          type="text"
+                          id="lat-input"
+                          name="lat"
+                          placeholder="Enter the latitude"
+                          required
+                        />
+                        <!-- <span class="form__error subtitle subtitle_error"
+                          >Please don't leave this field empty</span
+                        > -->
+                      </div>
+                      <div class="form__pair">
+                        <input
+                          class="form__input"
+                          type="text"
+                          id="lng-input"
+                          name="lng"
+                          placeholder="Enter the longitude"
+                          required
+                        />
+                        <!-- <span class="form__error subtitle subtitle_error"
+                          >Please don't leave this field empty</span
+                        > -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form__item">
+                    <label
+                      class="form__label subtitle"
+                      for="address-input phone-input url-input"
+                      >And contact details:</label
+                    >
+                    <div class="form__row_tablet">
+                      <div class="form__pair">
+                        <input
+                          class="form__input"
+                          type="text"
+                          id="address-input"
+                          name="address"
+                          placeholder="e.g., Klotchkivska, 117"
+                          required
+                        />
+                        <!-- <span class="form__error subtitle subtitle_error"
+                          >Please don't leave this field empty</span
+                        > -->
+                      </div>
+                      <div class="form__pair">
+                        <input
+                          class="form__input"
+                          type="tel"
+                          id="phone-input"
+                          name="phone"
+                          placeholder="Start wit +380..."
+                          required
+                        />
+                        <!-- <span class="form__error subtitle subtitle_error"
+                          >Please provide real phone number</span
+                        > -->
+                      </div>
+                      <div class="form__pair">
+                        <input
+                          class="form__input"
+                          type="url"
+                          id="url-input"
+                          name="url"
+                          placeholder="Paste the web page's URL"
+                          required
+                        />
+                        <!-- <span class="form__error subtitle subtitle_error"
+                          >Please provide real URL</span
+                        > -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form__item">
+                    <label class="form__label subtitle" for="type"
+                      >You'd rather call it:</label
+                    >
+                    <div class="form__radios">
+                      <label class="form__radio">
+                        <input
+                          type="radio"
+                          name="type"
+                          id="type1"
+                          value="fancy"
+                          required
+                        /><span>Fancy</span>
+                      </label>
+                      <label class="form__radio"
+                        ><input
+                          type="radio"
+                          name="type"
+                          id="type2"
+                          value="casual"
+                          required
+                        /><span>Casual</span></label
+                      >
+                      <label class="form__radio"
+                        ><input
+                          type="radio"
+                          name="type"
+                          value="takeaway"
+                          id="type3"
+                          required
+                        /><span>Takeaway</span></label
+                      >
+                    </div>
+                    <span class="form__error subtitle subtitle_error"
+                      >Please choose an option</span
+                    >
+                  </div>
+                  <div class="form__item">
+                    <label class="form__label subtitle" for="details"
+                      >And some details (no more than 4, please):</label
+                    >
+                    <div class="form__checkboxes">
+                      <label class="form__checkbox"
+                        ><input
+                          class="checkbox__input"
+                          type="checkbox"
+                          name="details"
+                          value="Famous Chef"
+                          id="chef"
+                        />Famous chef</label
+                      >
+                      <label class="form__checkbox"
+                        ><input
+                          class="checkbox__input"
+                          type="checkbox"
+                          name="details"
+                          value="Great wine range"
+                          id="wine"
+                        />Great wine range</label
+                      >
+                      <label class="form__checkbox"
+                        ><input
+                          class="checkbox__input"
+                          type="checkbox"
+                          name="details"
+                          value="Outdoor terrace"
+                          id="terrace"
+                        />Outdoor terrace</label
+                      >
+                      <label class="form__checkbox"
+                        ><input
+                          class="checkbox__input"
+                          type="checkbox"
+                          name="details"
+                          value="Delivery available"
+                          id="delivery"
+                        />Delivery available</label
+                      >
+                      <label class="form__checkbox"
+                        ><input
+                          class="checkbox__input"
+                          type="checkbox"
+                          name="details"
+                          value="Pets-friendly"
+                          id="pets"
+                        />Pets-friendly</label
+                      >
+                      <label class="form__checkbox"
+                        ><input
+                          class="checkbox__input"
+                          type="checkbox"
+                          name="details"
+                          value="Stone oven-baked"
+                          id="oven"
+                        />Stone oven-baked</label
+                      >
+                    </div>
+
+                    <span
+                      class="form__error subtitle subtitle_error"
+                      id="features-error"
+                      >Please select 1-4 features!!!</span
+                    >
+                  </div>
+                </form>
+              </div>
+              <div class="edit__footer sidebar__footer">
+                <div class="buttons">
+                  <button type="button" class="button button_save">Save</button>
+                  <button type="button" class="button button_save-changes">
+                    Save Changes
+                  </button>
+                </div>
+                <button class="round-btn round-btn_back">
+                  <span></span><span></span><span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="app__map" id="map"></div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
