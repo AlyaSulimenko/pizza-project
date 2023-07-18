@@ -12,6 +12,19 @@ html {
   @media (max-width: $mobile) {
     background: $backgroundColor;
   }
+  &.webp {
+    background: url(../img/background.jpg) repeat center center fixed;
+    // background-size: cover;
+    background-size: contain;
+    height: 100%;
+    overflow: hidden;
+    @media (max-width: $tablet) {
+      background: $fontColor;
+    }
+    @media (max-width: $mobile) {
+      background: $backgroundColor;
+    }
+  }
 }
 body {
   font-weight: 400;

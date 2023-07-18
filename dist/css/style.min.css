@@ -37,6 +37,22 @@ html {
     background: #f1e2c3;
   }
 }
+html.webp {
+  background: url(../img/background.jpg) repeat center center fixed;
+  background-size: contain;
+  height: 100%;
+  overflow: hidden;
+}
+@media (max-width: 61.99875em) {
+  html.webp {
+    background: rgb(52, 46, 33);
+  }
+}
+@media (max-width: 47.99875em) {
+  html.webp {
+    background: #f1e2c3;
+  }
+}
 
 body {
   font-weight: 400;
