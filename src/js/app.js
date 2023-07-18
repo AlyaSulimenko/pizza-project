@@ -597,6 +597,7 @@ class App {
     //to delete rest from the sidebar small card
     const eraseIcon = sidebarItem.querySelector(".erase-icon");
     eraseIcon.addEventListener("click", (e) => this.deleteRest(e));
+    this.setLocalStorage();
   }
   setLocalStorage() {
     localStorage.setItem("restaraunts", JSON.stringify(this.rests));
