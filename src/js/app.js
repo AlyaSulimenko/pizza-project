@@ -381,12 +381,15 @@ class App {
         .forEach((popup) => popup.classList.remove("zoomed-in"));
       targetClicked.classList.add("zoomed-in");
       const cardHtml = `<div class="card__header sidebar__header">
-    <div class="card__logo logo">
+      <p class="tooltip-text">Link to code</p>
+    <a  href="https://github.com/AlyaSulimenko/pizza-project"
+        target="_blank" 
+        class="card__logo logo tooltip-trigger">
       <div class="logo__image">
         <img src="../img/logo.png" alt="logo" />
       </div>
       <h1 class="logo__title title">Pizza Hunt</h1>
-    </div>
+    </a>
   </div>
   <div class="card__body">
     <h2 class="card__title title" id="card-title">

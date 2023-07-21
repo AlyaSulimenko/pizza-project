@@ -8,18 +8,18 @@
     <link rel="icon" href="img/favicon-32x32.png" type="image/x-icon" />
     <link
       rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css?_v=20230721102525"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css?_v=20230721104815"
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
       crossorigin=""
     />
-    <link rel="stylesheet" href="css/style.css?_v=20230721102525" />
+    <link rel="stylesheet" href="css/style.css?_v=20230721104815" />
     <script
       src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
       crossorigin=""
       defer
     ></script>
-    <script src="js/app.min.js?_v=20230721102525" defer></script>
+    <script src="js/app.min.js?_v=20230721104815" defer></script>
     <title>Pizza Hunt</title>
   </head>
   <body>
@@ -28,12 +28,17 @@
         <div class="app__container">
           <div class="app__sidebar sidebar">
             <div class="sidebar__header">
-              <div class="sidebar__logo logo">
+              <p class="tooltip-text">Link to code</p>
+              <a
+                href="https://github.com/AlyaSulimenko/pizza-project"
+                target="_blank"
+                class="sidebar__logo logo tooltip-trigger"
+              >
                 <div class="logo__image">
                   <picture><source srcset="../img/logo.webp" type="image/webp"><img src="../img/logo.png" alt="logo" /></picture>
                 </div>
                 <h1 class="logo__title title">Pizza Hunt</h1>
-              </div>
+              </a>
             </div>
             <div class="sidebar__filters filters">
               <div class="filters__type type">
@@ -91,12 +96,17 @@
             <div class="card"></div>
             <div class="edit">
               <div class="edit__header sidebar__header">
-                <div class="card__logo logo">
+                <p class="tooltip-text">Link to code</p>
+                <a
+                  href="https://github.com/AlyaSulimenko/pizza-project"
+                  target="_blank"
+                  class="card__logo logo tooltip-trigger"
+                >
                   <div class="logo__image">
                     <picture><source srcset="../img/logo.webp" type="image/webp"><img src="../img/logo.png" alt="logo" /></picture>
                   </div>
                   <h1 class="logo__title title">Pizza Hunt</h1>
-                </div>
+                </a>
               </div>
               <div class="edit__body">
                 <form class="edit__form form" id="edit-form" name="form">
