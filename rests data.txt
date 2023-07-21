@@ -84,9 +84,7 @@ webUrl
 : 
 "https://dc.kh.ua/en/"
 ///////
-"gulp-webp": "latest",
-		"gulp-webp-html-nosvg": "latest",
-		"gulp-webpcss": "latest",
+
 
 
 
