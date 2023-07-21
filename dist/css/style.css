@@ -59,7 +59,7 @@
 }
 
 .no-webp html{
-  background: url(../img/background.jpg) repeat center center fixed; }
+  background: url(../img/background-main.jpg) repeat center center fixed; }
 
 html {
   scroll-behavior: smooth;
@@ -69,7 +69,7 @@ html {
 }
 
 html.no-webp.webp{
-  background: url(../img/background.jpg) repeat center center fixed; }
+  background: url(../img/background-main.jpg) repeat center center fixed; }
 
 html.webp {
   scroll-behavior: smooth;
@@ -1672,6 +1672,6 @@ h6 {
 }
 }
 
-.webp html{ background: url(../img/background.webp) repeat center center fixed; }
+.webp html{ background: url(../img/background-main.webp) repeat center center fixed; }
 
-html.webp.webp{ background: url(../img/background.webp) repeat center center fixed; }
+html.webp.webp{ background: url(../img/background-main.webp) repeat center center fixed; }
